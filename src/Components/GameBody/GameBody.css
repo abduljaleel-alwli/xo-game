@@ -1,0 +1,48 @@
+.body-game{
+    text-align: center;
+    text-align-last: justify;
+    user-select: none;
+    font-family: cursive;
+    animation: colors 15s ease infinite;
+}
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    /* background: var(--bs-black); */
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+#box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29%;
+    height: 29%;
+    background: #1f2122;
+    box-shadow: 0 0 13px -4px inset;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 137px;
+}
+
+@keyframes colors {
+    0%{
+        color: white;
+    }
+    25%{
+        color: aqua;
+    }
+    50%{
+        color: burlywood;
+    }
+    75%{
+        color: cadetblue;
+    }
+    100%{
+        color: white;
+    }
+}
