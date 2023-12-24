@@ -4,8 +4,7 @@ import "./GameBody.css";
 
 const GameBody = () => {
 
-  const [controll, setControll] = useState(true)
-  const [fall, setFall] = useState(0)
+  const [control, setControl] = useState(true)
 
   // const [replay, setReplay] = useState(0)
 
@@ -21,6 +20,12 @@ const GameBody = () => {
 
   const player = useRef(null)
 
+  const PageReload = () => {
+    setTimeout(() => {
+      window.location = '/'
+    }, 3000);
+  }
+
   useEffect(() => {
 
     const boxs = document.querySelectorAll('#box')
@@ -28,14 +33,14 @@ const GameBody = () => {
         
         box.addEventListener('click', (e) => {
 
-            if (controll && box.innerText !== 'o') {
+            if (control && box.innerText !== 'o') {
               box.innerText = 'x'
-              setControll(false)
+              setControl(false)
             }
 
-            if (!controll && box.innerText !== 'x') {
+            if (!control && box.innerText !== 'x') {
               box.innerText = 'o'
-              setControll(true)
+              setControl(true)
             }
             
             setTimeout(() => {
@@ -50,9 +55,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_1.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -64,9 +67,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_4.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -78,9 +79,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_7.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -92,9 +91,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_1.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -106,9 +103,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_2.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -120,9 +115,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_3.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -134,9 +127,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_1.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
   
                 if (
@@ -148,9 +139,7 @@ const GameBody = () => {
                     setInterval(() => {
                       player.current.innerHTML = `Winner ${box_3.current.innerText} | Replayed...`
                     }, 0);
-                    setTimeout(() => {
-                      window.location = '/'
-                    }, 3000);
+                    PageReload()
                 }
                 
               }
@@ -195,14 +184,14 @@ const GameBody = () => {
       
     });
 
-    if (controll) {
+    if (control) {
       player.current.innerText = 'X'
     } else {
       player.current.innerText = 'O'
     }
 
     
-  }, [controll])
+  }, [control])
 
   return (
     <>
@@ -227,5 +216,3 @@ const GameBody = () => {
 };
 
 export default GameBody;
-
-
